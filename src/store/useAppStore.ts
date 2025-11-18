@@ -1,7 +1,7 @@
 import { create } from "zustand"
 
 interface AppState {
-  language:"en"|"ku",
+  language:"en"|"fa",
   theme : "dark" | "light",
   toggleLanguage: () => void,
   toggleTheme : () => void
@@ -12,7 +12,7 @@ export const useAppStore = create<AppState>((set)=>({
   theme : 'dark',
   toggleLanguage : ()=>
     set((state) => ({
-    language : state.language === 'en' ? 'ku' : 'en'
+    language : state.language === 'en' ? 'fa' : 'en'
   })),
   toggleTheme : ()=>
     set((state)=>({
