@@ -1,16 +1,27 @@
-import Header from './components/Header'
-import MainContent from './components/MainContent'
-import Footer from './components/Footer'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { useEffect } from 'react';
+import { useAppStore } from "./store/useAppStore";
+import Home from './pages/Home';
+import Product from './pages/Product';
+import Seller from './pages/Seller';
+import Layout from './components/Layout';
 import './App.css'
 import './index.css'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900">
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path='/' element= {<Home/>} />
+          <Route path='/product/:id' element= {<Product/>}/>
+          <Route path='/seller/:id' element={<Seller/>}/>
+
+        </Routes>
+
+      </Layout>
+
+    </BrowserRouter>
   );
 }
 
